@@ -22,6 +22,10 @@
 - Laravel 8.83.29
 - MariaDB 10.3.39
 
+#### ER図  
+![test](https://github.com/user-attachments/assets/e34bb0a7-d2f4-4bf7-80cb-06fa0879f84f)
+
+
 #### URL
 - 環境開発: [http://localhost/](http://localhost/)
 - phpMyAdmin: [http://localhost:8080/](http://localhost:8080/)
