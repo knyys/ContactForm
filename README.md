@@ -10,12 +10,20 @@
 
 #### Laravel構築環境
 1. `docker-compose exec php bash`  
-2. `cp .env.example .env`  
-   環境変数を変更  
-3. `composer install`  
-4. `php artisan key:generate`  
-5. `php artisan migrate`  
-6. `php artisan db:seed`  
+2. `cp .env.example .env`
+3. 環境変数を変更
+```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+4. `composer install`  
+5. `php artisan key:generate`  
+6. `php artisan migrate`  
+7. `php artisan db:seed`  
 
 #### 使用技術
 - PHP 7.4.9
@@ -23,7 +31,8 @@
 - MariaDB 10.3.39
 
 #### ER図  
-![test](https://github.com/user-attachments/assets/e34bb0a7-d2f4-4bf7-80cb-06fa0879f84f)
+![test](https://github.com/user-attachments/assets/917ed292-efa7-4999-8fc0-484a35968ae2)
+
 
 
 #### URL
