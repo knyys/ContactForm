@@ -110,7 +110,6 @@ class TestController extends Controller
         'detail' => $contactData['detail'],
         'content' => $contactData['content'],
     ]);
-        Contact::create->all;
         return view('thanks');
     }
     
