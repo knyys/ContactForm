@@ -1,40 +1,32 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/',[TestController::class,'index']);
+//ログイン処理
+Route::post('/login',[LoginController::class,'login']);
+//ログアウト処理
+Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 
-Route::post('/confirm',[TestController::class,'confirm']);
+//管理画面
+    //画面表示
+    Route::get('/admin', [AdminController::class, 'index']);
+    //削除
+    Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('contacts.destroy');
+    //検索
+    Route::get('/search', [AdminController::class, 'search']); 
 
-Route::get('/admin', [AdminController::class, 'index']);
-
-Route::get('/search', [AdminController::class, 'search']); 
-
-Route::post('/admin',[TestController::class,'admin']);
-
-Route::delete('/admin/search', [TodoController::class, 'destroy']);
-
-Route::get('/login',[TestController::class,'login']);
-
-Route::post('/login',[TestController::class,'authenticate']);
-
-Route::get('/register',[TestController::class,'registerForm']);
-
-Route::post('/register',[TestController::class,'register']);
-
-Route::post('/thanks',[TestController::class,'thanks']);
+//お問い合わせフォーム
+    //表示
+    Route::get('/',[ContactController::class,'index']);
+    //入力処理
+    Route::post('/',[ContactController::class,'confirm']);
+    //確認画面
+    Route::get('/confirm',[ContactController::class,'confirmForm']);
+    //送信
+    Route::post('/confirm',[ContactController::class,'send']);
+    //サンクスページ
+    Route::get('/thanks',[ContactController::class,'thanks']);

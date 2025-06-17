@@ -7,6 +7,8 @@ use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Cache\RateLimiting\Limit;
+use App\Actions\Fortify\CreateNewUser;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {

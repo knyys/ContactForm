@@ -1,57 +1,149 @@
+body{
+    width: 100vw;
+}
+
 .admin-page {
     margin: 0 auto;
-    max-width: 1230px;
     width: 100%;
-    padding: 20px;
-
+    padding: 20px 0;
 }
 
 .admin-page__heading {
     color: #8d6449;
-    font-size: 24px;
+    font-size: 26px;
     text-align: center;
     padding: 5px 0;
-    text-decoration: none;
     font-family: "Noto Serif", serif;
-
 }
 
 .admin-page__search {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .admin-page__search-form {
     display: flex;
-    gap: 10px;
-    align-items: center;
-
+    justify-content: space-between;
+    width: 70%;
+    position: absolute;
+    left: 15%;
 }
 
-.admin-page__search-form input {
+.form__input--search {
     padding: 5px 5px;
+    font-size: 12px;
+    width: 30%;  
 }
 
-.admin-page__button {
+.form__select--gender{
+    padding: 5px 5px;
+    font-size: 12px;
+    width: 7%;  
+}
+
+.form__input--day{
+    padding: 5px 5px;
+    font-size: 12px;
+    width: 12%;
+}
+
+.admin-page__search-button {
+    background-color: #a58f86;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin: 0 20px 0 0;
+}
+
+.admin-page__reset-button{
+    background-color: #caa494fd;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.admin-page__export{
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-}
-
-.admin-page__button form {
-    display: inline-block;
-    margin: 0;
-}
-
-.admin-page__table-inner {
     width: 100%;
-    max-width: 1230px;
+    position: relative;
+}
+.admin-page__export-form {
+    display: flex;
+    justify-content: flex-start;
+    width: 30%;
+    position: absolute;
+    left: 15%;
+}
 
+.admin-page__export-button{
+    background-color: #c9b9b2fd;
+    border: none;
+    color: #725b52;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    position: absolute;
+    right: 15%;
+    margin-top: 35px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #72635d;
+    border: 1px solid #d1c0b9;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination .active {
+    background-color: #a58f86;
+    color: white;
+    border-color: #a58f86;
+}
+
+.pagination .disabled {
+    color: #ccc;
+    pointer-events: none;
+    border: 1px solid #ddd;
+}
+
+.admin-page__table{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    position: relative;
+}
+
+.admin-page__table-inner{
+    width: 70%;
+    margin: 0 auto;
+    position: absolute;
+    left: 15%;
+    top: 80px;
 }
 
 .admin-page__table--row {
-
     border: 1px solid #a58f86;
 }
 
@@ -59,14 +151,75 @@
     background-color: #a58f86;
     color: white;
     height: 40px;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
 }
 
-.admin-page__pagenation{
+.admin-page__table--row td {
+    height: 40px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.admin-page__table--row td button {
+    background-color: white;
+    border: 1px solid #d1b6abe0;
+    color: #d1b6abe0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 50px;
+    width: 50%;
+}
+
+.modal-content table{
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.modal-content table tr{
+    height: 40px;
+    padding: 8px;
+    font-size: 12px;
+    color: #b99384e0;
+}
+
+.label{
+    width: 40%;
+    font-weight: bold;
+}
+
+.modal-button{
     display: flex;
-    justify-content: flex-end;
-    height: 35px;
-    width: 45px;
-    font-size: 14px;
-    border: solid 2px #a58f86;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-delete-button{
+    background-color: #ff4039;
+    border: none;
+    color: white;
+    margin-top: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    
 }

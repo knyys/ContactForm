@@ -10,13 +10,16 @@ class Contact extends Model
     use HasFactory;
 
      protected $fillable = [
-        'first_name', 
-        'last_name', 
-        'email', 
+        'category_id',
+        'name',
+        'first_name',
+        'last_name',
+        'gender',
+        'email',
+        'address',
+        'building',
+        'detail',
         'tel', 
-        'address', 
-        'detail', 
-        // 必要なカラムを追加
     ];
 
     public function category()
@@ -25,8 +28,4 @@ class Contact extends Model
     }
 
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
